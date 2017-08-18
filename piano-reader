@@ -1,0 +1,9 @@
+from urllib import urlopen
+from json import load
+
+appId = ‘xx’
+appToken = ‘xxx’
+urlApi = 'https://api.tinypass.com/api/v3/publisher/webhook/list?aid=%s&limit=100&offset=' %(appId) + \
+         '0&order_by=create_date&order_direction=desc&api_token=' + appToken
+hUrl = urlopen(urlApi)
+Dic = load(hUrl)
